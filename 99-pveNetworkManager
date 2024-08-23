@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /usr/bin/python3 /etc/NetworkManager/dispatcher.d/pveNetworkManager.d/__main__.py "$@"
