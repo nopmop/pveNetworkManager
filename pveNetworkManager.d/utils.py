@@ -40,8 +40,8 @@ def debug_info(interface, state, pre_or_post, command):
 		_run(f"ip route show")
 	if command == "iptables":
 		logger.info(f"[Context: {interface}/{state}]  ====================== {pre_or_post} IPTABLES ======================")
-		_run(f"iptables -L -t nat -n --line-numbers")
-		_run(f"iptables -L -n --line-numbers")
+		_run(f"iptables -v -L -t nat -n --line-numbers")
+		_run(f"iptables -v -L -n --line-numbers")
 	if command == "brctl":
 		logger.info(f"[Context: {interface}/{state}]  ====================== {pre_or_post} BRIDGES ======================")
 		_run(f"brctl show")
