@@ -59,8 +59,8 @@ When trying to run NetworkManager with Proxmox some applications, such as `Disco
 
     source /etc/network/interfaces.d/*
     ```
-    Note 1: if you have any other interfaces (like a NAT bridge, etc.) the software should run fine, but you run it AT YOUR OWN RISK. 
-    Note 2: Make sure the configurations of [iptables, routes] are backed up.
+    - Note 1: if you have any other interfaces (like a NAT bridge, etc.) the software should run fine, but you run it AT YOUR OWN RISK. 
+    - Note 2: Make sure the configurations of [iptables, routes] are backed up.
 
 ## Installation
 
