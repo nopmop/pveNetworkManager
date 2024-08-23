@@ -2,11 +2,9 @@
 
 ## Overview
 
-Proxmox uses `/etc/network/interfaces` to manage network interfaces. This conflicts with NetworkManager, which typically controls network interfaces through its own configuration files.
+When trying to run NetworkManager with Proxmox some applications, such as `Discover` or `PackageKit`, which rely on connectivity-change notifications from NetworkManager end up believing that the system is offline. Setting `managed=false` in `/etc/NetworkManager/NetworkManager.conf` is of no use.
 
-Previously, a common workaround to use NetworkManager with Proxmox involved setting `managed=false` in `/etc/NetworkManager/NetworkManager.conf` causing NetworkManager to ignore Proxmox interfaces, and thus causing some applications (that rely on NetworkManager notifications of connectivity-changes, such as `Discover`, the package manager) to believe that the network is unavailable. 
-
-**pveNetworkManager** solves this by dynamically configuring components in Proxmox when the state of the interfaces changes, in a way that avoids conflicts. 
+**pveNetworkManager** solves this. 
 
 ## Features
 
