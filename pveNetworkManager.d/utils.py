@@ -14,12 +14,14 @@ logger.addHandler(syslog_handler)
 
 def run(interface, state, command):
 	if DEBUG:
-		for c in ["ip", "iptables", "brctl", "service"]:
+		for c in ["ip", "iptables", "brctl"]:
 			if command[:len(c)] == c:
 				debug_info(interface, state, "PRE", c)
 				result = _run(interface, state, command)
 				debug_info(interface, state, "POST", c)
 				return result
+			else:
+				return _run(interface, state, command)
 	else:
 		return _run(interface, state, command)
 
