@@ -55,7 +55,7 @@ Previously, a common workaround to use NetworkManager with Proxmox involved sett
 
     auto vmbr0
     iface vmbr0 inet manual
-            bridge-ports 
+            bridge-ports dummy0
             bridge-stp off
             bridge-fd 0
 
